@@ -5,8 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ConverterDecHex"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="ConverterDecHex" Height="450" Width="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
         
+        <TextBox Name="DecNumber" Grid.Row="0"></TextBox>
+        <TextBlock Name="HexNumber" Grid.Row="1"></TextBlock>
     </Grid>
 </Window>
