@@ -24,5 +24,13 @@ namespace ConverterDecHex
         {
             InitializeComponent();
         }
+
+        DataСonversion dataConversion = new DataСonversion();
+
+        private void DecNumber_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            dataConversion.DataInput = DecNumber.Text;
+            HexNumber.Text = dataConversion.DataConvertible;
+        }
     }
 }

@@ -12,7 +12,8 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         
-        <TextBox Name="DecNumber" Grid.Row="0"></TextBox>
+        <TextBox Name="DecNumber" Grid.Row="0" 
+                 TextChanged="DecNumber_TextChanged"></TextBox>
         <TextBlock Name="HexNumber" Grid.Row="1"></TextBlock>
     </Grid>
 </Window>
