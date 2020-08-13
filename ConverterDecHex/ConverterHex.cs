@@ -25,9 +25,10 @@ namespace ConverterDecHex
                 var temp = (byte)(number % 16);
                 numbersHex.Add(temp);
                 number /= 16;
-                if (number < 16) numbersHex.Add((byte)number);
             }
-
+            
+            if (number < 16) numbersHex.Add((byte)number);
+            
             numbersHex.Reverse();
             return numbersHex;
         }
@@ -37,9 +38,9 @@ namespace ConverterDecHex
         /// </summary>
         /// <param name="Lb"></param>
         /// <returns></returns>
-        private List<char> Translate(List<byte> Lb)
+        private List<char> Translate(List<byte> lb)
         {
-            foreach (var item in Lb)
+            foreach (var item in lb)
             {
                 if (item >= 0 && item <= 9)
                 {
@@ -53,5 +54,40 @@ namespace ConverterDecHex
 
             return numbersHexCh;
         }
+    
+        /// <summary>
+        /// Переводит строку в число (целое)
+        /// </summary>
+        /// <param name="number">Введенная строка</param>
+        /// <returns>Числовое значение строки</returns>
+        private UInt32 ConversionString(string number)
+        {
+            UInt32 temp = 0;
+            try
+            {
+                temp = Convert.ToUInt32(number);
+            }
+            catch (OverflowException)
+            {
+                Console.WriteLine("{0} is outside the range of the Int32 type.", number);
+            }
+            catch (FormatException) 
+            {
+                Console.WriteLine("The {0} value '{1}' is not in a recognizable format.", number.GetType().Name, number);
+            }
+            return temp;
+        }  
+
+        public string TranslateData(string data)
+        {
+            var number = ConversionString(data);
+            var lb = Translate(number);
+            string result = "";
+            foreach (var item in lb)
+	        {
+                result+=item.ToString();
+        	} 
+            return result;
+        } 
     }
 }

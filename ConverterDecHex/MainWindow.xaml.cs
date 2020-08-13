@@ -20,17 +20,16 @@ namespace ConverterDecHex
     /// </summary>
     public partial class MainWindow : Window
     {
-        DataСonversion dataConversion = new DataСonversion("", "");
-
         public MainWindow()
         {
             InitializeComponent();
         }
 
+        ConverterHex converterHex = new ConverterHex();
+
         private void DecNumber_TextChanged(object sender, TextChangedEventArgs e)
         {
-            dataConversion.DataInput = DecNumber.Text;
-            HexNumber.Text = dataConversion.DataConvertible;
+            HexNumber.Text = converterHex.TranslateData(DecNumber.Text);
         }
     }
 }

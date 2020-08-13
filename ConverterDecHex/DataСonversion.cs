@@ -25,7 +25,9 @@ namespace ConverterDecHex
                 if (value == null || value.Length > 10) 
                     Console.WriteLine("Error! DataInput length exceeds 10 characters or NULL.");
                 else 
-                    dataInput = value;
+                    {
+                        dataInput = value;
+                    }
             }
         }
         /// <summary>
@@ -48,6 +50,12 @@ namespace ConverterDecHex
             DataInput = dI;
             dataConvertible = dC;
         }
+        #endregion
+    
+        #region Objects
+        #endregion
+    
+        #region Methods          
         #endregion
     }
 }
