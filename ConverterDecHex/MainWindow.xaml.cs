@@ -20,12 +20,12 @@ namespace ConverterDecHex
     /// </summary>
     public partial class MainWindow : Window
     {
+        DataСonversion dataConversion = new DataСonversion("", "");
+
         public MainWindow()
         {
             InitializeComponent();
         }
-
-        DataСonversion dataConversion = new DataСonversion();
 
         private void DecNumber_TextChanged(object sender, TextChangedEventArgs e)
         {

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,7 +22,10 @@ namespace ConverterDecHex
         {
             set
             {
-                dataInput = value;
+                if (value == null || value.Length > 10) 
+                    Console.WriteLine("Error! DataInput length exceeds 10 characters or NULL.");
+                else 
+                    dataInput = value;
             }
         }
         /// <summary>
@@ -37,7 +41,13 @@ namespace ConverterDecHex
         #endregion
 
         #region Constructors
-
+        public DataСonversion() {}
+        public DataСonversion(string dI) : this(dI, "") {} 
+        public DataСonversion(string dI, string dC)
+        {
+            DataInput = dI;
+            dataConvertible = dC;
+        }
         #endregion
     }
 }
