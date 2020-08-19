@@ -29,7 +29,7 @@ namespace ConverterDecHex
 
         private void DecNumber_TextChanged(object sender, TextChangedEventArgs e)
         {
-            HexNumber.Text = converterHex.TranslateData(DecNumber.Text);
+            HexNumber.Text = "HEX_DEC: " + converterHex.TranslateData(DecNumber.Text) + " \n" + "HEX_HEX: " + converterHex.TranslateDataCodeANSII(DecNumber.Text);
         }
     }
 }

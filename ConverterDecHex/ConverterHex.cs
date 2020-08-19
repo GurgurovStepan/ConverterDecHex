@@ -40,6 +40,8 @@ namespace ConverterDecHex
         /// <returns></returns>
         private List<char> Translate(List<byte> lb)
         {
+            numbersHexCh.Clear();
+
             foreach (var item in lb)
             {
                 if (item >= 0 && item <= 9)
@@ -88,6 +90,18 @@ namespace ConverterDecHex
                 result+=item.ToString();
         	} 
             return result;
-        } 
+        }
+
+        public string TranslateDataCodeANSII(string data)
+        {
+            var lc = Translate(Translate(ConversionString(data)));
+
+            string result = "";
+            foreach (var item in lc)
+            {
+                result += item.ToString();
+            }
+            return result;
+        }
     }
 }
